@@ -1,0 +1,84 @@
+{
+    "name": "dumb-copy-paste",
+    "displayName": "Dumb copy-paste",
+    "description": "Ctrl+Shift+V as it should be, as in Sublime!",
+	"icon": "images/icon.png",
+    "version": "1.0.0",
+    "publisher": "shepelevstas",
+	"license": "MIT",
+	"keywords": [
+		"sublime",
+		"editor-clipboard"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/shepelevstas/dumb-copy-paste.git"
+	},
+	"homepage": "https://github.com/shepelevstas/dumb-copy-paste",
+	"bugs": {
+		"url": "https://github.com/shepelevstas/dumb-copy-paste/issues"
+	},
+    "engines": {
+        "vscode": "^1.21.0"
+    },
+    "categories": [
+        "Other",
+		"Keymaps",
+		"Clipboard"
+    ],
+    "activationEvents": [
+        "onCommand:dumb.copy",
+        "onCommand:dumb.cut",
+        "onCommand:dumb.paste"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "dumb.copy",
+                "title": "Dumb: Copy"
+            },
+            {
+                "command": "dumb.cut",
+                "title": "Dumb: Cut"
+            },
+            {
+                "command": "dumb.paste",
+                "title": "Dumb: Paste"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "dumb.copy",
+                "key": "ctrl+c",
+				"mac": "cmd+c",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "dumb.cut",
+                "key": "ctrl+x",
+				"mac": "cmd+x",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "dumb.paste",
+                "key": "ctrl+shift+v",
+				"mac": "cmd+shift+v",
+                "when": "editorTextFocus"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.6",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    }
+}

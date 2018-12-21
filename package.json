@@ -23,8 +23,7 @@
     },
     "categories": [
         "Other",
-        "Keymaps",
-        "Clipboard"
+        "Keymaps"
     ],
     "activationEvents": [
         "onCommand:dumb.copy",

@@ -2,29 +2,29 @@
     "name": "dumb-copy-paste",
     "displayName": "Dumb copy-paste",
     "description": "Ctrl+Shift+V as it should be, as in Sublime!",
-	"icon": "images/icon.png",
-    "version": "1.0.0",
+    "icon": "images/icon.png",
+    "version": "1.0.1",
     "publisher": "shepelevstas",
-	"license": "MIT",
-	"keywords": [
-		"sublime",
-		"editor-clipboard"
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/shepelevstas/dumb-copy-paste.git"
-	},
-	"homepage": "https://github.com/shepelevstas/dumb-copy-paste",
-	"bugs": {
-		"url": "https://github.com/shepelevstas/dumb-copy-paste/issues"
-	},
+    "license": "MIT",
+    "keywords": [
+        "sublime",
+        "editor-clipboard"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/shepelevstas/dumb-copy-paste.git"
+    },
+    "homepage": "https://github.com/shepelevstas/dumb-copy-paste",
+    "bugs": {
+        "url": "https://github.com/shepelevstas/dumb-copy-paste/issues"
+    },
     "engines": {
         "vscode": "^1.21.0"
     },
     "categories": [
         "Other",
-		"Keymaps",
-		"Clipboard"
+        "Keymaps",
+        "Clipboard"
     ],
     "activationEvents": [
         "onCommand:dumb.copy",
@@ -51,19 +51,19 @@
             {
                 "command": "dumb.copy",
                 "key": "ctrl+c",
-				"mac": "cmd+c",
+                "mac": "cmd+c",
                 "when": "editorTextFocus"
             },
             {
                 "command": "dumb.cut",
                 "key": "ctrl+x",
-				"mac": "cmd+x",
+                "mac": "cmd+x",
                 "when": "editorTextFocus"
             },
             {
                 "command": "dumb.paste",
                 "key": "ctrl+shift+v",
-				"mac": "cmd+shift+v",
+                "mac": "cmd+shift+v",
                 "when": "editorTextFocus"
             }
         ]
@@ -76,9 +76,9 @@
         "test": "npm run compile && node ./node_modules/vscode/bin/test"
     },
     "devDependencies": {
-        "typescript": "^2.6.1",
-        "vscode": "^1.1.6",
+        "@types/mocha": "^2.2.42",
         "@types/node": "^7.0.43",
-        "@types/mocha": "^2.2.42"
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.26"
     }
 }

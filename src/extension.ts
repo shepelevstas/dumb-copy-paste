@@ -44,12 +44,19 @@ class Dumb{
         let tabSize = Number(editor.options.tabSize)
         let lines = editor.document.getText(sel).split('\n')
         let blockIndent = 0
+        let skipStartLines = 1
+        let skipEndLines = 0
         if (sel.start.character>0){
             let lineStart = new Position(sel.start.line, 0)
             let pre = editor.document.getText(new Range(lineStart, sel.start))
             blockIndent = Dumb.spaces(pre, tabSize)
+        } else if (lines.slice(-1)[0].length==0) {
+            blockIndent = Dumb.spaces(lines[0], tabSize)
+            skipStartLines = 0
+            skipEndLines = 1
         }
-        for (let i = 1, l = lines.length; i < l; i++) {
+
+        for (let i = skipStartLines, l = lines.length-skipEndLines; i < l; i++) {
             let spaces = Dumb.spaces(lines[i], tabSize)
             let ind = spaces - blockIndent
             if (ind > 0) {
